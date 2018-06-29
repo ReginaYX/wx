@@ -1,0 +1,72 @@
+<view class="address_null">
+  ！请填写收货地址
+  <view class='after'></view>
+</view>
+<view class="address_new address_new_border"></view>
+<view class="wrap">
+  <view class="ul">
+    <view class="li" wx:for="{{prod_data}}">
+       <view class="pic" style="background-image:url({{item.imgUrl}})"></view> 
+      <!-- <view class="pic"></view> -->
+      <view class="desc">
+        <view class="name">{{item.name}}</view>
+        <view style="display:flex;">
+          <view class="attr" wx:for='{{item.spu_options}}' wx:for-index="k" wx:for-item="v">
+            {{k}}:{{v}}
+          </view>
+        </view>
+        <view class="price">￥ {{item.product_price}}</view>
+        <view class="number">数量：{{item.qty}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="shipping">
+  <view class='before'></view>
+  <view class='shipping_send'>配送服务</view>
+  <view class="shipping_content">
+    <view class="shipping_method">平邮</view>
+    <view class="type_justify">
+      工作日、双休日与节假日均可送货
+    </view>
+  </view>
+  <view class='after'></view>
+</view>
+<view class="buy_msg_v2">
+  <view class='before'></view>
+  <view class="buy_msg_v2_tit">订单备注</view>
+  <input type="text" placeholder="选填备注信息"></input>
+</view>
+<view class="conponListTab" style="">
+  <view class='before'></view>
+  <view class="content">
+    <view class='strong'>优惠券</view>
+    <view class="em">无可用</view>
+    <view class='after'></view>
+  </view>
+</view>
+<view class='end'></view>
+<view class="buy_section">
+  <view class="buy_chart">
+    <view class="buy_chart_item">
+      <view class="buy_chart_item_text">商品金额</view>
+      <view class="buy_chart_item_price">¥ {{prod_data[0].product_price}}</view>
+    </view>
+    <view class="buy_chart_item">
+      <view class="buy_chart_item_text">运费
+        <view class="buy_chart_item_tip"> </view>
+      </view>
+      <view class="buy_chart_item_price">+ ¥0.00</view>
+    </view>
+  </view>
+</view>
+<view class="pay_area">
+  <view class="price">总价：
+    <view class='strong'>¥{{prod_data[0].product_price}}</view>
+  </view>
+  <view id="payBtnList" style="">
+    <view class="mod_btns" id="btnPayOnLine" style="">
+      <view class="mod_btn bg_2">在线支付</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<!--pages/favorite/favorite.wxml-->
+<block wx:if='{{favorite_list}}!=null'>
+<view class='ul'>
+  <view class='li' wx:for="{{favorite_list}}">
+    <navigator class='item' url='/pages/details/details?pid={{item._id.$oid}}'>
+      <view class='pic' style='background-image: url(http:{{item.imgUrl}})'></view>
+      <view class='content'>
+        <view class='name'>{{item.name}}</view>
+        <block wx:if="{{item.price_info.special_price}}">
+          <view class='price'>
+          <view class='symbol'>{{item.price_info.price.symbol}}</view>
+            {{item.price_info.special_price.value}}
+          </view>
+          <view class='ex_price price'>
+          <view class='symbol'>{{item.price_info.price.symbol}}</view>
+            {{item.price_info.price.value}}
+          </view>
+        </block>
+        <block wx:else>
+          <view class='price'>
+          <view class='symbol'>{{item.price_info.price.symbol}}</view>
+            {{item.price_info.price.value}}
+          </view>
+        </block>
+      </view>
+    </navigator>
+    <view class='del' bindtap='del_favorite' data-pid='{{item.favorite_id}}'></view>
+  </view>
+</view>
+</block>
+<block wx:else>
+<view>没有收藏</view>
+</block>

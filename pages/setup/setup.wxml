@@ -1,0 +1,21 @@
+<!--pages/setup/setup.wxml-->
+<view class='wrap'>
+<view class="account_section">
+  <view class="account_title">当前登录账号</view>
+  <view class="account_card">
+    <view class="account_card_profile">
+      <view style="width:100rpx;height:100rpx;border-radius:50%;background:url({{pic}}) no-repeat center center/ 100% auto"> </view>
+    </view>
+    <view class="account_card_info">
+      <view class="account_card_name">
+        <view class="account_card_name_text">{{customerInfo.lastname}}{{customerInfo.firstname}}</view>
+      </view>
+      <view class="account_card_email">邮箱：{{customerInfo.email}}</view>
+    </view>
+  </view>
+  <view class="account_manage">
+       修改登录密码
+  </view>
+</view>
+<view class="login_out" bindtap='loginOut'>退出登录</view>
+</view>

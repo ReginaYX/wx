@@ -1,0 +1,51 @@
+/* pages/setup/setup.wxss */
+page{
+  background: #efefef;
+  color: #666
+}
+.account_section {
+  margin: -1rpx 0 30rpx 0;
+}
+
+.account_title {
+  font-size: 13pt;
+  padding: 24rpx 30rpx;
+  background: #fff;
+  margin-bottom: 4rpx;
+}
+
+.account_card {
+  display: flex;
+  padding: 24rpx 30rpx;
+  font-size: 13pt;
+  background: #fff;
+  margin-bottom: 4rpx;
+}
+
+.account_card_profile {
+  padding-top: -4rpx;
+  padding-right: 20rpx;
+}
+.account_card_name_text{
+  color: #666;
+}
+.account_card_email {
+  margin-top: 6rpx;
+  color: #999;
+}
+.account_manage{
+  padding: 24rpx 30rpx;
+  background: #fff;
+  margin-bottom: 4rpx;
+  font-size: 13pt;
+}
+.login_out{
+  background: #fff;
+  color: #666;
+  margin: 0 auto;
+  width: 700rpx;
+  font-size: 14pt;
+  border-radius: 20rpx;
+  padding: 24rpx 0;
+  text-align: center;
+}

@@ -1,0 +1,88 @@
+<!--pages/details/details.wxml-->
+<swiper indicator-dots='true' autoplay='true'>
+  <swiper-item wx:for="{{prod_data.image_detail}}">
+    <view style='height:750rpx;background:url({{item}})  no-repeat center center/80% auto'></view>
+  </swiper-item>
+</swiper>
+<view class='basicInfo'>
+  <view class='fn_wrap'>
+    <view class='goods_name'>{{prod_data.name}}</view>
+    <view class="heart {{favorite?'active':''}}" bindtap='addToFavorite' data-pid='57bab0d5f656f2940a3bf56e'></view>
+  </view>
+  <view class='price_wrap'>
+    <view class='price'>
+      <view class='p_symbol'>{{prod_data.price_info.price.symbol}}</view>
+      {{prod_data.price_info.price.value}}
+    </view>
+    <!-- <view class='col_right'>{{prod_data.reviw_rate_star_average}}</view> -->
+  </view>
+</view>
+<view class='skuCont'>
+  <view class='sku_wrap'>
+    <view class="propertyDiv" wx:for="{{prod_data.options}}">
+      <view class="sku">
+        <view class='label'>{{item.label}}</view>
+        <view class="sku_list">
+          <view class="option {{f.active=='current'?'option_selected':''}}" wx:for="{{item.value}}" wx:for-item="f" bindtap='changeProperty' data-oid='{{f._id.$oid}}' wx:key="f._id.$oid">
+            {{f.attr_val}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="sku sku_num">
+      <view class='label'>数量</view>
+      <view class="num_wrap">
+        <view class="minus {{sku_num==1?'minus_disabled':''}}" bindtap='minusSkunum'>-</view>
+        <input class="num" value='{{sku_num}}' type='number' confirm-type='完成' bindinput='setSkuNum' />
+        <view class="plus" bindtap='plusSkunum'>+</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='detailTab'>
+  <view wx:for="{{[{name:'描述',key:'desc'},{name:'评论',key:'review'}]}}" bindtap='changeVisibleKey' data-key='{{item.key}}' class='tab {{item.key==visibleKey?"active":""}}'>
+    {{item.name}}
+  </view>
+</view>
+<view style='display:{{visibleKey=="desc"?"block":"none"}};margin-bottom:110rpx' class='content'>
+  <view class='content-split'>
+    <view class='content-desc' wx:for="{{prod_data.groupAttrArr}}">
+      <view class='descName'>{{index}}</view>
+      <view class='descVal'>{{item}}</view>
+    </view>
+  </view>
+  <view wx:for="{{prod_data.image_detail}}">
+    <view style='height:960rpx;background:url({{item}})  no-repeat center center/100% auto'></view>
+  </view>
+</view>
+<view style='display:{{visibleKey=="review"?"block":"none"}};margin-bottom:110rpx'>
+  <view class="card" wx:for="{{prod_data.productReview.coll}}">
+    <view class="fec-card-header">
+      {{item.summary}}
+    </view>
+    <view class="fec-card-content">
+      <view class="review-content">
+        {{item.review_content}}
+      </view>
+      <view class="review_list_remark">
+        <view>By{{item.name}}</view>
+        <view class='audit_date'>{{item.audit_date}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="de_btn_bar">
+  <navigator class="icon_cart" url='/pages/cart/cart' open-type='reLaunch'>
+    <view class="icon">
+      <view class='cartNum {{shouldAdd?"drop":""}}'>{{items_count}}</view>
+    </view>
+    <!-- <view class=''>+{{sku_num}}</view> -->
+    <view class="txt">购物车</view>
+  </navigator> 
+  <view class="btn btn_orange" bindtap='addCart'>
+      <view class="txt">加入购物车</view>
+  </view>
+  <view class="btn btn_buy">
+    <view class="txt">立即购买</view>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+<view class="bar bar-nav">
+  <view class="icon icon-menu pull-left open-panel"></view>
+  <view>
+    <view class="title header_logo">
+      <view class="lazy"></view>
+    </view>
+  </view>
+  <view class="pull-right">
+    <button class="icon icon-me open-panel" open-type="getUserInfo" bindgetuserinfo='onGotUserInfo'></button>
+    <view class="icon icon-cart"></view>
+  </view>
+</view>
+<view class='main'> 
+<swiper indicator-dots='true' autoplay='true'>
+  <swiper-item wx:for="{{result.advertiseImg.bigImgList}}">
+    <view style='height:375rpx;background:url({{item.imgUrl}}) no-repeat center center/100% auto'></view>
+  </swiper-item>
+</swiper>
+<view style='padding:20rpx;display:flex;justify-content:space-between'>
+  <view style='' wx:for="{{result.advertiseImg.smallImgList}}">
+    <view style='width:340rpx;height:288rpx;background:url({{item.imgUrl}}) no-repeat center center/100% auto'></view>
+  </view>
+</view>
+<view style='padding:20rpx'>
+  <view class='row' wx:for="{{result.productList}}">
+    <navigator class='col' url='/pages/details/details?pid={{item.one.product_id}}'>
+      <view style='height:516rpx;background:url({{item.one.image}}) no-repeat center center/100% auto'></view>
+      <view class='product_name'>{{item.one.name}}</view>
+      <block wx:if="{{item.one.special_price}}">
+      <view class='proPrice'>
+        <view>{{item.one.special_price.code}}</view>
+        <view>{{item.one.special_price.symbol}}</view>
+        <view>{{item.one.special_price.value}}</view>
+      </view>
+      <view class='proPrice-ex'>
+        <view>{{item.one.price.code}}</view>
+        <view>{{item.one.price.symbol}}</view>
+        <view>{{item.one.price.value}}</view>
+      </view>
+      </block>
+      <block wx:else>
+      <view class='proPrice'>
+        <view>{{item.one.price.code}}</view>
+        <view>{{item.one.price.symbol}}</view>
+        <view>{{item.one.price.value}}</view>
+      </view>
+      </block>
+    </navigator> 
+    <navigator class='col' url='/pages/details/details?pid={{item.two.product_id}}'>
+      <view style='height:516rpx;background:url({{item.two.image}}) no-repeat center center/100% auto'></view>
+      <view class='product_name'>{{item.two.name}}</view>
+      <block wx:if="{{item.two.special_price}}">
+      <view class='proPrice'>
+        <view>{{item.two.special_price.code}}</view>
+        <view>{{item.two.special_price.symbol}}</view>
+        <view>{{item.two.special_price.value}}</view>
+      </view>
+      <view class='proPrice-ex'>
+        <view>{{item.two.price.code}}</view>
+        <view>{{item.two.price.symbol}}</view>
+        <view>{{item.two.price.value}}</view>
+      </view>
+      </block>
+      <block wx:else>
+      <view class='proPrice'>
+        <view>{{item.two.price.code}}</view>
+        <view>{{item.two.price.symbol}}</view>
+        <view>{{item.two.price.value}}</view>
+      </view>
+      </block>
+    </navigator>
+  </view>
+</view> 
+</view> 
+<view class='footer'>
+  <view class='change-bar'>Language: </view>
+  <view class='change-bar'>Currency: </view>
+  <view class='foot-img'></view>
+</view>
+<view class='copy'>Copyright Notice ©2016 FecShop.com All rights reserved.</view>

@@ -1,0 +1,50 @@
+<!-- <view class="login-tab" style="display:block">
+  <view class="username-login login-selected J_ping">
+    <view class="account_login_txt">账号密码登录</view>
+  </view>
+   <view class="sms-login J_ping">
+    <view class="sms_login_txt">短信验证码登录</view>
+  </view> 
+</view> -->
+<view class="wrap loginPage">
+  <view class="login-wrap login-wrap-active">
+    <view class="input-container">
+      <view class="txt-username txt">账号</view>
+      <input class="acc-input username txt-input J_ping" type="text" value="" placeholder="用户名/邮箱/已验证手机" autocomplete="off" value='{{formData.email}}' bindblur='updateFormData' data-key='email' />
+      <view class="icon icon-clear"></view>
+    </view>
+    <view class="input-container">
+      <view class="txt-password txt">密码</view>
+      <input type="password" class="acc-input password txt-input J_ping" placeholder="请输入密码" autocomplete="off" value='{{formData.password}}' bindblur='updateFormData' data-key='password' />
+      <view class="icon icon-clear"></view>
+    </view>
+  </view>
+
+  <!--短信验证登录-->
+  <!-- <view id="sms_login" class="login-wrap">
+    <view id="img_code_box" class="input-container" style="display:none;">
+      <input class="acc-input sms-img-verify J_ping" id="smsCode" type="text" placeholder="请输入图片验证码" autocomplete="off" onkeyup="CtoH(this);" size="11" maxlength="6" report-eventid="MLoginRegister_PicVerifyInput">
+      <view class="sms-code-box">
+        <view id="smsImgCode" src="" alt="" class="J_ping" report-eventid="MLoginRegister_SMS_PicVerifyRefresh">
+      </view>
+      <i class="icon icon-clear"></view>
+    </view>
+    <view class="sms-input-box">
+      <view class="input-container">
+        <view class="area-box J_ping" report-eventid="MLoginRegister_AreaCode">
+          <view class="area_code" code="86">+86</view>
+          <i class="area_icon"></view>
+        </view>
+        <input type="tel" id="telphone" class="acc-input telphone sms-txt-input J_ping" placeholder="请输入手机号" report-eventid="MLoginRegister_SMSPhoneInput">
+        <i class="icon icon-clear"></view>
+      </view>
+      <button data-mescode="true" class="mesg-code mesg-disable J_ping" report-eventid="MLoginRegister_GetVerification" data-eventid="MLoginRegister_SMSReceiveCode">获取验证码</button>
+    </view>
+    <view class="input-container">
+      <input id="telCode" class="acc-input telCode sms-txt-input J_ping" type="text" placeholder="请输入收到的验证码" autocomplete="off" report-eventid="MLoginRegister_VerificationInput">
+      <i class="icon icon-clear"></view>
+    </view>
+  </view> -->
+  <view class="btn login {{(formData.email&&formData.password)?'active':''}}" bindtap='submit'>登 录</view>
+  <navigator url='/pages/register/register' class='btn register'>注 册</navigator>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/register/register.wxml-->
+<view class='null'></view>
+<input wx:for="{{formData}}" type='text' placeholder='{{index}}' value='{{item}}' bindblur='updateFormData' data-key='{{index}}'></input>
+<!-- <view style='width:260rpx;height:60rpx;background:url(data:image/gif;base64,{{captchaPic}}) no-repeat center center/80% auto' class='captchaPic'></view> -->
+<view bindtap='submit' class='submit'>注册账户</view>

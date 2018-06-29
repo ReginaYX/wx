@@ -1,0 +1,6 @@
+/**app.wxss**/
+view{
+  box-sizing: border-box;
+  font-family: Verdana,Arial,Tahoma;
+  overflow-wrap: break-word;
+}

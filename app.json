@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/cart/cart",
+    "pages/signIn/signIn",
+    
+    "pages/order/order",
+    
+    
+    "pages/prodlist/prodlist",
+    
+    "pages/me/me",
+    "pages/setup/setup",
+    
+    "pages/details/details",
+    "pages/index/index",
+    
+    "pages/favorite/favorite",
+    "pages/register/register",
+    "pages/list/list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "fecshop",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#666"
+  },
+  "tabBar": {
+    "color": "#555",
+    "selectedColor": "#555",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/index-fill.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "列表",
+        "iconPath": "img/list.png",
+        "selectedIconPath": "img/list-fill.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "img/cart.png",
+        "selectedIconPath": "img/cart-fill.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "img/me.png",
+        "selectedIconPath": "img/me-fill.png"
+      }
+    ]
+  },
+  "debug": true
+}

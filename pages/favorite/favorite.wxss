@@ -1,0 +1,54 @@
+/* pages/favorite/favorite.wxss */
+.ul{
+  margin-top: 30rpx;
+}
+.li{
+  display: flex;
+  align-items: center;
+}
+.li .item{
+  height: 280rpx;
+  padding-top: 10rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.li .pic{
+  padding: 26rpx;
+  height: 240rpx;
+  width: 240rpx;
+  background: no-repeat center center/100% auto;
+  float: left;
+  background-origin: content-box;
+}
+.li .content{
+  float: left;
+  color: #333;
+  font-size: 11pt;
+  padding: 0 20rpx 16rpx 20rpx;
+  height: 240rpx;
+  width: 400rpx;
+}
+.li .name{
+  height: 76rpx;
+  margin-top: 16rpx;
+}
+.li .price{
+  /* padding-top: 30rpx; */
+  color: #e93b3d; 
+}
+.li .symbol{
+  font-size: 7pt;
+  display: inline-block;
+}
+.ex_price{
+  padding-top: 20rpx;
+  text-decoration: line-through;
+}
+.ex_price .symbol{
+  text-decoration: none;
+}
+.del{
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADYElEQVR4Xu1bzWoUQRCu6gyIQfQWjBCJe1CfQCVeBMGToLnkKILRY0AJ6W7IYQ/JTjcBhdzEiPoGimdFEMWfB9BTNEY0uelhw4jMlEzcCZOYZLa3x2WS1Fz76/r5pqq7q6YHYY8/uMf9ByaAI6AkBmZnZ/c1m83rAHATEWsliV0nhogWEPFOFEV36/V6VIaOUlLAWnskSZJniHiyDKOKZBDRxziOL0xOTi4WYYvGvQkgIrTWvgaAM0XKyhwnovdKqdOISD5yvQmw1l4jojkfIzzm3lBK3fOY778LGGPeAsCpnBFPEVFKKT/4GLZxbqPROI6IBhGHs7E0CrTWed3OKr0jIAzD34gYZJqFEP0TExNLzpa0MWFqamogCIIvOWhTKXWgjalbQrwIaOV/kpeulPKSWeSMMWZdzvvq8zKWCfi7A3AE7KoUMMZcIqJ0te3KoaYo50scT3clrZR6kpf5zxpgjFkGgL4SFVdJ1Fel1EARAd8B4HCVrC7LFiJa1FofLSJgV6ZAWj8goipMgbLY3ilyvM4BO8XJ7exkAnbDW/TxwTkCGo3GRSGEIaIeIYSWUj7ezgBr7WUiepBiiGhYa/2iTLyrPRt1OxNgjPkEAIMtQUtKqf7tHDLG/ACAQy3MZ6XUsZLx8wCwKpOIlrXWTlt4JwSkZ/+1eVEU9dTr9XX1QN5B1+rNFR+GYYyIItNZq9WCkZGRuN20YALaZSrDGWM4AjgFeA3gRZB3gWxR5G2QzwF8EOKTIB+FuRbgYoirwa2KKtfy1hXP5TD3A7ghwh0hbolxT7DaTdG1tnh601NrnbXUN9058230dvCV3wbDMDwHAA9b3l4t+jDSAb7ai6Br19kVX/kIcHXIFc8EVP0k6PpGXfEcARwBXa4FwjD8iYgHs1ANgmBwfHx8wTV0y8DPzMz0xXGcXutbfYgo0lrvd5HdydfhVwAwlFPyX67HFzlhrT2RJEmYvz4PAO/SnyiK5ubHOyHgCgA8clHSLSwijkop77vocyYgvSFujHmJiGddFHUB+0ZKOeT6C40zAakj09PT/UKI51W5T5xeghRCnJdSfnMluiMCUiXpb3IrKyujRHTrf/0mV+QMEc0j4u3e3t65sbGxX0X4zcY7JqATZVWcwwRU8a1006Y9HwF/AHDta26S67IzAAAAAElFTkSuQmCC) no-repeat center center/100% auto;
+  width: 50rpx;
+  height: 50rpx;
+}

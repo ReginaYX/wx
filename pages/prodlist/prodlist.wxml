@@ -1,0 +1,106 @@
+<!--pviewges/prodviewst/prodviewst.wxml-->
+  <view class="pro_filter">
+    <view class="pro_filter_items">
+      <view class="item hviews" bindtap='toggleMenuShow'>
+        <view class="zh ">综合
+          <view class="icon_tri"></view>
+        </view>
+      </view>
+      <view class="item {{sortColumn=='hot'?'active':''}}" bindtap='setSortColumn' data-key='hot'>销量</view>
+      <view class="item {{sortColumn=='favorite_count'?'active':''}}"  bindtap='setSortColumn' data-key='favorite_count'>收藏</view>
+      <view class="item btn_sf " bindtap='toggleFilter'>筛选
+        <view class="icon_filter"></view>
+      </view>
+    </view>
+    <view class="item_options" style='display:{{menuShow?"block":"none"}}'>
+      <view class="selection">
+        <view class="selected J_ping {{sortColumn==null?'active':''}}" bindtap='setSortColumn'>综合
+          <view class="icon_true"></view>
+        </view>
+        <view class="J_ping {{sortColumn=='new'?'active':''}}" bindtap='setSortColumn' data-key='new'>最新上架
+          <view class="icon_true"></view>
+        </view>
+        <view class="J_ping {{sortColumn=='low-to-high'?'active':''}}" bindtap='setSortColumn' data-key='low-to-high'>价格最低
+          <view class="icon_true"></view>
+        </view>
+        <view class="J_ping {{sortColumn=='high-to-low'?'active':''}}" bindtap='setSortColumn' data-key='high-to-low'>价格最高
+          <view class="icon_true"></view>
+        </view>
+        <view class="J_ping {{sortColumn=='review_count'?'active':''}}" bindtap='setSortColumn' data-key='review_count'>评价最多
+          <view class="icon_true"></view>
+        </view>
+      </view> 
+    </view>
+    <scroll-view class="filter {{filterShow?'active':''}}" scroll-y="true"  bindtap='toggleFilter'>
+      <view class='filter-inner'  catchtap>
+        <view class='filter-cate'>
+          <view class='item-title' bindtap='clearFilter'>清除选项</view>
+        </view>
+        <view class='filter-cate' wx:for='{{filterInfo}}' wx:for-index='k'>
+          <view class='item-title'>{{item.label}}</view>
+          <view class='ul'>
+            <view class="li" wx:for='{{item.items}}' wx:for-item='f' bindtap='setFilterAttrs' data-key='{{k}}' data-value='{{f._id}}'>
+              {{f.label}}({{f.count}})
+            </view>
+          </view>
+        </view>
+        <view class='filter-cate' >
+          <view class='item-title'>价格</view>
+          <view class='ul'>
+            <view class='li' wx:for='{{filterPrice}}' wx:for-index='p' bindtap='fPrice' data-key='{{item.val}}'>
+              {{item.label}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  
+<view class='ul'>
+  <view class='li' wx:for="{{products}}">
+    <navigator class='item' url='/pages/details/details?pid={{item.one._id}}'>
+      <view class='pic' style='background-image: url(http:{{item.one.image}})'></view>
+      <view class='content'>
+        <view class='name'>{{item.one.name}}</view>
+        <block wx:if="{{item.one.special_price}}">
+        <view class='price'>
+          <view class='symbol'>{{item.one.special_price.symbol}}</view>
+          {{item.one.special_price.value}}
+        </view>
+        <view class='ex_price price'>
+          <view class='symbol'>{{item.one.price.symbol}}</view>
+          {{item.one.price.value}}
+        </view>
+        </block>
+        <block wx:else>
+        <view class='price'>
+          <view class='symbol'>{{item.one.price.symbol}}</view>
+          {{item.one.price.value}}
+        </view>
+        </block>
+      </view>
+    </navigator>
+    <navigator class='item' url='/pages/details/details?pid={{item.two._id}}'>
+      <view class='pic' style='background-image: url(http:{{item.two.image}})'></view>
+      <view class='content'>
+        <view class='name'>{{item.two.name}}</view>
+        <block wx:if="{{item.two.special_price}}">
+        <view class='price'>
+          <view class='symbol'>{{item.two.special_price.symbol}}</view>
+          {{item.two.special_price.value}}
+        </view>
+        <view class='ex_price price'>
+          <view class='symbol'>{{item.two.price.symbol}}</view>
+          {{item.two.price.value}}
+        </view>
+        </block>
+        <block wx:else>
+        <view class='price'>
+          <view class='symbol'>{{item.two.price.symbol}}</view>
+          {{item.two.price.value}}
+        </view>
+        </block>
+      </view>
+    </navigator>
+  </view>
+</view>

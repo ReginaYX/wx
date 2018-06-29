@@ -1,0 +1,52 @@
+/* pages/list/list.wxss */
+.left-scroll{
+  width: 170rpx;
+  height:100vh;
+  background: #f8f8f8;
+  float: left;
+}
+.li{
+  height: 92rpx;
+  line-height: 92rpx;
+  text-align: center;
+  font-size: 8pt;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 28rpx;
+}
+.li.active{
+  background: white;
+  color: #f10215;
+}
+.right-scroll{
+  padding: 38rpx 14rpx 0 14rpx;
+  float: right;
+  box-sizing: border-box;
+  width: 580rpx;
+  height: 100vh;
+}
+.dl{
+  overflow: hidden;
+}
+.dt{
+  height: 54rpx;
+  line-height: 28rpx;
+  font-weight: bold;
+  font-size: 10pt;
+}
+.dl-child{
+  height: 214rpx;
+  width: 168rpx;
+  float: left;
+  text-align: center;
+}
+.pic{
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+  background-color: #f8f8f8; 
+}
+.name{
+  font-size: 7pt;
+}
